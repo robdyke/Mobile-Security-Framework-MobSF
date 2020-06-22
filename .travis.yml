@@ -39,7 +39,10 @@ jobs:
     - python --version
     - choco install wkhtmltopdf --version 0.12.5
     - choco install openjdk --version 13.0.102
+    - cd $HOME
+    - wget --quiet https://curl.haxx.se/ca/cacert.pem
     env:
+    - SSL_CERT_FILE=$HOME/cacert.pem
     - PATH=/c/Python36:/c/Python36/Scripts:$PATH
     - JAVA_HOME="/c/Program Files/OpenJDK/jdk-13.0.2"
   - name: Python 3.7.5 on Windows 10
@@ -50,7 +53,10 @@ jobs:
     - python --version
     - choco install wkhtmltopdf --version 0.12.5
     - choco install openjdk --version 13.0.102
+    - cd $HOME
+    - wget --quiet https://curl.haxx.se/ca/cacert.pem
     env:
+     - SSL_CERT_FILE=$HOME/cacert.pem
     - PATH=/c/Python37:/c/Python37/Scripts:$PATH
     - JAVA_HOME="/c/Program Files/OpenJDK/jdk-13.0.2"
 before_install:
